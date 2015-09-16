@@ -1,0 +1,120 @@
+///////////////////////////
+/* Basic Globe Functions */
+
+$globe-radius: 100px; // orb radius
+$globe-containWidth: 2*$globe-radius; // orb diameter
+
+//proportion desired for art - depends on art dimensions
+$radial-artW: .6*($globe-radius); 
+$radial-artH: 1*($globe-radius);
+
+// centering the divs over orb
+$radial-position: ($globe-containWidth - $radial-artW)/2;
+
+.radial{ 
+	// size of artwork
+	height:$radial-artH+$globe-radius;
+	width:$radial-artW;
+	// keeps artwork from overlapping circle
+	background-size:$radial-artW $radial-artH;
+	// Positions divs around globe - relative
+	top:-$radial-artH;
+	left: $radial-position;
+
+	// arbitrary styling for demo
+	background:url(../images/radial.jpg) no-repeat top center;
+	transform-origin:50% bottom;
+	border-top:2px solid cyan;
+	box-sizing:border-box;
+	// basic positioning within container
+	display:block;
+	position:absolute;
+}
+
+.globe-contain{
+	// size of globe
+	height:$globe-containWidth;
+	width:$globe-containWidth;
+	
+	// sets the shape and color
+	border-radius:50%;
+	background:#ccc;
+
+	// position on the page
+	display:block;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-$globe-containWidth/2;
+	margin-top:-$globe-containWidth/2;
+}
+
+	$a: 45;
+		
+	@while $a <= 360 {
+		$translate: 100px;
+		.radial-#{$a} {
+			-moz-transform: rotate($a+deg);
+		    -ms-transform: rotate($a+deg); 
+		    -webkit-transform: rotate($a+deg);
+		    transform: rotate($a+deg);
+		}
+		$a: ($a + 45);
+	}
+
+///////////////////////////
+/*   Megan Functions    */
+
+.btcf:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+@keyframes grow {
+	0%{margin-top:2*($radial-artH);background-size:0 0;height:0;}
+	100%{margin-top:0;background-size:$radial-artW 2*($radial-artH);height:2*($radial-artH);}
+}
+@keyframes fadeIn {
+	0%{opacity:0;filter:alpha(opacity=0);}
+	100%{opacity:1;filter:alpha(opacity=100);}
+}
+@keyframes sway {
+	100%{transform:rotate(5deg);}
+}
+
+.megan{
+	background:url(../images/meganGlobe.png);
+	background-size:2*($globe-radius) 2*($globe-radius);
+	animation:fadeIn .5s;
+	.radial{
+		opacity:0;
+		background-image:url(../images/meganTree.png);
+		border:none;
+		animation:grow .75s forwards, fadeIn .75s .5s forwards;
+        transition:all .5s;
+	}
+
+	$b: 30;
+		
+	@while $b <= 360 {
+		
+		$translate: 100px;
+		.radial-#{$b} {
+			-moz-transform: rotate($b+deg);
+		    -ms-transform: rotate($b+deg); 
+		    -webkit-transform: rotate($b+deg);
+		    transform: rotate($b+deg);
+		}
+		$b: ($b + 45);
+	}
+	/*.treeGroup1,.treeGroup2{transform-origin: center center;}
+	.treeGroup1{
+		animation:sway 3s infinite alternate;
+	}
+	.treeGroup2{
+		animation:sway 2s infinite alternate;
+	}*/
+}
+
+

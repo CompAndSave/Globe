@@ -1,0 +1,90 @@
+///////////////////////////
+/* Basic Globe Functions */
+
+$globe-radius: 100px; // orb radius
+$globe-containWidth: 2*$globe-radius; // orb diameter
+
+//proportion desired for art - depends on art dimensions
+$radial-artW: .4*($globe-radius); 
+$radial-artH: 1.5*($globe-radius);
+
+// centering the divs over orb
+$radial-position: ($globe-containWidth - $radial-artW)/2;
+
+@keyframes glow {
+    0%   {	height:$globe-containWidth;
+	width:$globe-containWidth;filter:blur(1px);}
+    50%  {	height:1.03*($globe-containWidth);
+	width:1.03*($globe-containWidth);filter:blur(3px);}
+    100% {	height:$globe-containWidth;
+	width:$globe-containWidth;filter:blur(1px);}
+}
+@keyframes glow-flame {
+    0%   {	height:$radial-artW;
+	width:$radial-artW;filter:blur(1px);}
+    50%  {	height:1.03*($radial-artW);
+	width:1.03*($radial-artW);filter:blur(3px);}
+    100% {	height:$radial-artW;
+	width:$radial-artW;filter:blur(1px);}
+}
+
+.radial{ 
+	// size of artwork
+	height:$radial-artH+$globe-radius;
+	width:$radial-artW;
+	// keeps artwork from overlapping circle
+	background-size:$radial-artW $radial-artH;
+	// Positions divs around globe - relative
+	top:-$radial-artH;
+	left: $radial-position;
+
+	// arbitrary styling for demo
+	background:url(../images/sun-ray.png) no-repeat top center;
+	transform-origin:50% bottom;	
+	//border-top:2px solid cyan;
+	box-sizing:border-box;
+	// basic positioning within container
+	display:block;
+	position:absolute;
+}
+
+.globe-contain{
+	// size of globe
+	height:$globe-containWidth;
+	width:$globe-containWidth;
+	
+	// sets the shape and color
+	border-radius:50%;
+	background:#ff7854;
+
+	// position on the page
+	display:block;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-$globe-containWidth/2;
+	margin-top:-$globe-containWidth/2;
+	background:#ff7854 url(../images/sun-center.png) no-repeat center center;
+	filter:blur(1px);
+	transform-origin:center/2 center/2;
+	animation-name:glow;
+	animation-duration:1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;	
+}
+
+	$a: 0;
+		
+	@while $a <= 360 {
+		$translate: 100px;
+		.radial-#{$a} {
+			-moz-transform: rotate($a+deg);
+		    -ms-transform: rotate($a+deg); 
+		    -webkit-transform: rotate($a+deg);
+		    transform: rotate($a+deg);
+		}
+		$a: ($a + 45);
+	}
+
+///////////////////////////
+/*   Custom Functions    */

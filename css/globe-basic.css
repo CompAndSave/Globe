@@ -1,0 +1,79 @@
+/* Basic Globe Functions */
+.radial {
+  display: block;
+  position: absolute;
+  height: 200px;
+  width: 40px;
+  background-size: 40px 100px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  transform-origin: 50% bottom;
+  top: -100px;
+  left: 80px;
+  background-image: url(../images/radial.jpg);
+  border-top: 2px solid cyan;
+  box-sizing: border-box; }
+
+.globe-contain {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: #ccc;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -100px; }
+
+.radial-45 {
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.radial-90 {
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.radial-135 {
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+.radial-180 {
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.radial-225 {
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg); }
+
+.radial-270 {
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.radial-315 {
+  -moz-transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg); }
+
+.radial-360 {
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg); }
+
+/*   Custom Functions    */
+
+/*# sourceMappingURL=globe-basic.css.map */

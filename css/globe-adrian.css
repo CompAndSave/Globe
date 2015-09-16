@@ -1,0 +1,115 @@
+/* Basic Globe Functions */
+@keyframes glow {
+  0% {
+    height: 200px;
+    width: 200px;
+    filter: blur(1px); }
+  50% {
+    height: 206px;
+    width: 206px;
+    filter: blur(3px); }
+  100% {
+    height: 200px;
+    width: 200px;
+    filter: blur(1px); } }
+@keyframes glow-flame {
+  0% {
+    height: 40px;
+    width: 40px;
+    filter: blur(1px); }
+  50% {
+    height: 41.2px;
+    width: 41.2px;
+    filter: blur(3px); }
+  100% {
+    height: 40px;
+    width: 40px;
+    filter: blur(1px); } }
+.radial {
+  height: 250px;
+  width: 40px;
+  background-size: 40px 150px;
+  top: -150px;
+  left: 80px;
+  background: url(../images/sun-ray.png) no-repeat top center;
+  transform-origin: 50% bottom;
+  box-sizing: border-box;
+  display: block;
+  position: absolute; }
+
+.globe-contain {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: #ff7854;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -100px;
+  background: #ff7854 url(../images/sun-center.png) no-repeat center center;
+  filter: blur(1px);
+  transform-origin: center/2 center/2;
+  animation-name: glow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; }
+
+.radial-0 {
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg); }
+
+.radial-45 {
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.radial-90 {
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.radial-135 {
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+.radial-180 {
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.radial-225 {
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -webkit-transform: rotate(225deg);
+  transform: rotate(225deg); }
+
+.radial-270 {
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+.radial-315 {
+  -moz-transform: rotate(315deg);
+  -ms-transform: rotate(315deg);
+  -webkit-transform: rotate(315deg);
+  transform: rotate(315deg); }
+
+.radial-360 {
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg); }
+
+/*   Custom Functions    */
+
+/*# sourceMappingURL=globe-adrian.css.map */

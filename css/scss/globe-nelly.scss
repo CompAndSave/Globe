@@ -1,0 +1,119 @@
+///////////////////////////
+/* Basic Globe Functions */
+
+$globe-radius: 210px; // orb radius
+
+$globe-containWidth: 2*$globe-radius; // orb diameter
+
+//proportion desired for art - depends on art dimensions
+$radial-artW: 140px; 
+$radial-artH: 165px;
+
+// centering the divs over orb
+$radial-position: ($globe-containWidth - $radial-artW)/2;
+
+
+
+.radial{ 
+	// size of artwork
+	height:$radial-artH+$globe-radius;
+	width:$radial-artW;
+	// keeps artwork from overlapping circle
+	background-size:$radial-artW $radial-artH;
+	// Positions divs around globe - relative
+	top:-$radial-artH;
+	left: $radial-position;
+
+	// arbitrary styling for demo
+	//background:url(../images/obc/city2.png) no-repeat 0 -71px;
+	transform-origin:50% bottom;
+	box-sizing:border-box;
+	// basic positioning within container
+	display:block;
+	position:absolute;
+}
+
+.globe-contain{
+	// size of globe
+	height:$globe-containWidth;
+	width:$globe-containWidth;
+	
+	// sets the shape and color
+	border-radius:50%;
+	background: url(../images/obc/globe.png) no-repeat center center;
+
+	// position on the page
+	display:block;
+	position:relative;
+	left:50%;
+	top:50%;
+	margin-left:-$globe-containWidth/2;
+	margin-top:$globe-containWidth/2;
+}
+
+	$a: 0;
+	$delay:.3s;	
+	@while $a <= 360 {
+		$translate: 100px;
+		.radial-#{$a} {
+			-moz-transform: rotate($a+deg);
+		    -ms-transform: rotate($a+deg); 
+		    -webkit-transform: rotate($a+deg);
+		    transform: rotate($a+deg);
+		    z-index:-1;
+		    .cityTop{
+		    	position: absolute;
+		    	top: 12px;
+		    	z-index: -4;
+		    
+		    }
+			.cityBottom{
+				position:absolute;
+				top: 12px;
+				animation: wipe .5s linear $delay forwards;
+				z-index:-3;
+			}
+		}
+		$a: ($a + 18);
+		$delay: $delay + .2s;
+	}
+@mixin keyframes{
+	0% {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+		filter: alpha(opacity=100);
+		-moz-opacity: 1;
+		-khtml-opacity: 1;
+		opacity: 1;
+	}
+	100% {
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+		filter: alpha(opacity=0);
+		-moz-opacity: 0;
+		-khtml-opacity: 0;
+		opacity:0;
+	}
+}
+@-webkit-keyframes wipe {
+  	@include keyframes;
+}
+@-moz-keyframes wipe{
+	@include keyframes;
+}
+@-o-keyframes wipe{
+	@include keyframes;
+}
+@keyframes wipe{
+	@include keyframes;
+}
+
+///////////////////////////
+/*   Custom Functions    */
+.city{
+	background: url('../images/obc/city.png') no-repeat center center;
+	width: 525px;
+	height: 525px;
+	position: relative;
+	top: -52.5px;
+	left: -60px;
+	z-index: -1;
+}

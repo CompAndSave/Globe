@@ -3,11 +3,12 @@
   height: 200px;
   width: 60px;
   background-size: 60px 100px;
+  background-repeat: no-repeat;
   top: -100px;
   left: 70px;
-  background: url(../images/radial.jpg) no-repeat top center;
+  -webkit-transform-origin: 50% bottom;
+  -ms-transform-origin: 50% bottom;
   transform-origin: 50% bottom;
-  border-top: 2px solid cyan;
   box-sizing: border-box;
   display: block;
   position: absolute; }
@@ -23,12 +24,6 @@
   top: 50%;
   margin-left: -100px;
   margin-top: -100px; }
-
-.radial-0 {
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg); }
 
 .radial-45 {
   -moz-transform: rotate(45deg);
@@ -84,6 +79,15 @@
   display: table;
   clear: both; }
 
+@-webkit-keyframes grow {
+  0% {
+    margin-top: 200px;
+    background-size: 0 0;
+    height: 0; }
+  100% {
+    margin-top: 0;
+    background-size: 60px 100px;
+    height: 200px; } }
 @keyframes grow {
   0% {
     margin-top: 200px;
@@ -91,8 +95,15 @@
     height: 0; }
   100% {
     margin-top: 0;
-    background-size: 60px 200px;
+    background-size: 60px 100px;
     height: 200px; } }
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100); } }
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -100,25 +111,23 @@
   100% {
     opacity: 1;
     filter: alpha(opacity=100); } }
+@-webkit-keyframes sway {
+  100% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg); } }
 @keyframes sway {
   100% {
+    -webkit-transform: rotate(5deg);
     transform: rotate(5deg); } }
 .megan {
   background: url(../images/meganGlobe.png);
   background-size: 200px 200px;
-  animation: fadeIn .5s;
-  /*.treeGroup1,.treeGroup2{transform-origin: center center;}
-  .treeGroup1{
-  	animation:sway 3s infinite alternate;
-  }
-  .treeGroup2{
-  	animation:sway 2s infinite alternate;
-  }*/ }
+  -webkit-animation: fadeIn .5s;
+  animation: fadeIn .5s; }
   .megan .radial {
     opacity: 0;
     background-image: url(../images/meganTree.png);
     border: none;
-    animation: grow .75s forwards, fadeIn .75s .5s forwards;
     transition: all .5s; }
   .megan .radial-30 {
     -moz-transform: rotate(30deg);
@@ -160,5 +169,113 @@
     -ms-transform: rotate(345deg);
     -webkit-transform: rotate(345deg);
     transform: rotate(345deg); }
+  .megan .radial-24 {
+    -moz-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg); }
+  .megan .radial-48 {
+    -moz-transform: rotate(48deg);
+    -ms-transform: rotate(48deg);
+    -webkit-transform: rotate(48deg);
+    transform: rotate(48deg); }
+  .megan .radial-72 {
+    -moz-transform: rotate(72deg);
+    -ms-transform: rotate(72deg);
+    -webkit-transform: rotate(72deg);
+    transform: rotate(72deg); }
+  .megan .radial-96 {
+    -moz-transform: rotate(96deg);
+    -ms-transform: rotate(96deg);
+    -webkit-transform: rotate(96deg);
+    transform: rotate(96deg); }
+  .megan .radial-120 {
+    -moz-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    -webkit-transform: rotate(120deg);
+    transform: rotate(120deg); }
+  .megan .radial-144 {
+    -moz-transform: rotate(144deg);
+    -ms-transform: rotate(144deg);
+    -webkit-transform: rotate(144deg);
+    transform: rotate(144deg); }
+  .megan .radial-168 {
+    -moz-transform: rotate(168deg);
+    -ms-transform: rotate(168deg);
+    -webkit-transform: rotate(168deg);
+    transform: rotate(168deg); }
+  .megan .radial-192 {
+    -moz-transform: rotate(192deg);
+    -ms-transform: rotate(192deg);
+    -webkit-transform: rotate(192deg);
+    transform: rotate(192deg); }
+  .megan .radial-216 {
+    -moz-transform: rotate(216deg);
+    -ms-transform: rotate(216deg);
+    -webkit-transform: rotate(216deg);
+    transform: rotate(216deg); }
+  .megan .radial-240 {
+    -moz-transform: rotate(240deg);
+    -ms-transform: rotate(240deg);
+    -webkit-transform: rotate(240deg);
+    transform: rotate(240deg); }
+  .megan .radial-264 {
+    -moz-transform: rotate(264deg);
+    -ms-transform: rotate(264deg);
+    -webkit-transform: rotate(264deg);
+    transform: rotate(264deg); }
+  .megan .radial-288 {
+    -moz-transform: rotate(288deg);
+    -ms-transform: rotate(288deg);
+    -webkit-transform: rotate(288deg);
+    transform: rotate(288deg); }
+  .megan .radial-312 {
+    -moz-transform: rotate(312deg);
+    -ms-transform: rotate(312deg);
+    -webkit-transform: rotate(312deg);
+    transform: rotate(312deg); }
+  .megan .radial-336 {
+    -moz-transform: rotate(336deg);
+    -ms-transform: rotate(336deg);
+    -webkit-transform: rotate(336deg);
+    transform: rotate(336deg); }
+  .megan .radial-360 {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); }
+  .megan .treeGroup {
+    position: absolute;
+    transform-origin: center center;
+    width: 200px;
+    height: 200px; }
+  .megan .group1 {
+    -webkit-animation: sway 5s infinite alternate;
+    animation: sway 5s infinite alternate; }
+    .megan .group1 .radial {
+      -webkit-animation: grow .75s forwards, fadeIn .75s .5s forwards;
+      animation: grow .75s forwards, fadeIn .75s .5s forwards; }
+  .megan .group2 {
+    -webkit-animation: grow .75s forwards, fadeIn .75s .5s forwards;
+    animation: grow .75s forwards, fadeIn .75s .5s forwards; }
+    .megan .group2 .radial {
+      height: 180px;
+      width: 40px;
+      background-size: 40px 80px;
+      top: -80px;
+      left: 80px;
+      -webkit-animation: fadeIn .75s 1s forwards;
+      animation: fadeIn .75s 1s forwards; }
+  .megan .group3 {
+    -webkit-animation: sway 8s infinite alternate;
+    animation: sway 8s infinite alternate; }
+    .megan .group3 .radial {
+      height: 150px;
+      width: 30px;
+      background-size: 30px 50px;
+      top: -50px;
+      left: 85px;
+      -webkit-animation: fadeIn .75s 1.5s forwards;
+      animation: fadeIn .75s 1.5s forwards; }
 
 /*# sourceMappingURL=globe-megan.css.map */

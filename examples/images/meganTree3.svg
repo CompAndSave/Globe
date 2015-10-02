@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="tree" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 40 100" style="enable-background:new 0 0 40 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#5E5E4D;}
+	.st1{fill:#60B482;}
+	.st2{fill:url(#tree-grad_1_);}
+</style>
+<path id="stump" class="st0" d="M22.4,99.5c-1.6,0.7-3.1,0.7-4.7,0l0-15.3h4.7L22.4,99.5z"/>
+<path id="tree-back" class="st1" d="M0,80.5L19.1,0.8c0.3-1.1,1.5-1.1,1.8,0L40,80.5C27.5,91.6,14.2,92.3,0,80.5z"/>
+<linearGradient id="tree-grad_1_" gradientUnits="userSpaceOnUse" x1="1.3371" y1="39.8683" x2="27.0611" y2="46.9062">
+	<stop  offset="0" style="stop-color:#1DA768;stop-opacity:0"/>
+	<stop  offset="1" style="stop-color:#187E4F"/>
+</linearGradient>
+<path id="tree-grad" class="st2" d="M20,0c-1,0-0.8,0.3-0.9,0.8L0,80.5c6.9,5.7,13,8.5,20,8.6c0,0-7-22.3,0-22.3s0-11.1,0-11.1
+	s-6-11.1,0-11.1s0-11.1,0-11.1s-6-11.1,0-11.1C25,22.3,20,0,20,0z"/>
+</svg>

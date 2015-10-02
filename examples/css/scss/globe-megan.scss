@@ -82,7 +82,7 @@ $group3Rad: 24;
 @-webkit-keyframes fadeIn {
 	0%{opacity:0;filter:alpha(opacity=0);}
 	100%{opacity:1;filter:alpha(opacity=100);}
-}
+}	
 @keyframes fadeIn {
 	0%{opacity:0;filter:alpha(opacity=0);}
 	100%{opacity:1;filter:alpha(opacity=100);}
@@ -93,14 +93,111 @@ $group3Rad: 24;
 @keyframes sway {
 	100%{-webkit-transform:rotate(5deg);transform:rotate(5deg);}
 }
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+
+
+// Clouds borrowed from
+// http://thecodeplayer.com/walkthrough/pure-css3-animated-clouds-background
+
+/*Cloud Shape*/
+.cloud {
+	width: 200px; height: 60px;
+	background: #fff;
+	
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	
+	position: relative; 
+	z-index:1;
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #fff;
+	width: 100px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+
+.cloud1 {
+	top:20%;
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+.cloud2 {
+	left: 200px;
+	top:25%;
+	
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; 
+
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+.cloud3 {
+	top:30%;
+	left: -250px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; 
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+
+.megan-example{
+	position:relative;
+	overflow:hidden;
+	width:100%;
+	height:500px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#75C3FF+0,ffffff+98 */
+	background: #75C3FF; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #75C3FF 0%, #ffffff 50%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#75C3FF), color-stop(50%,#ffffff)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #75C3FF 0%,#ffffff 50%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #75C3FF 0%,#ffffff 50%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #75C3FF 0%,#ffffff 50%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #75C3FF 0%,#ffffff 50%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75C3FF', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
 
 .megan{
 	background:url(../images/meganGlobe.png);
+	box-shadow:-2px -2px 0 #E2F2FF;
 	background-size:2*($globe-radius) 2*($globe-radius);
-	-webkit-animation:fadeIn .5s;animation:fadeIn .5s;
+	-webkit-animation:fadeIn .5s, sway 2s infinite alternate;animation:fadeIn .5s, sway 2s infinite alternate;
+	z-index:2;
 	.radial{
 		opacity:0;
-		background-image:url(../images/meganTree.png);
 		border:none;
         transition:all .5s;
 	}
@@ -131,14 +228,16 @@ $group3Rad: 24;
 
 	.treeGroup{position:absolute;transform-origin: center center;width:$globe-containWidth;height:$globe-containWidth;}
 	.group1{
-		-webkit-animation:sway 5s infinite alternate;animation:sway 5s infinite alternate;
+		-webkit-animation:sway 3s infinite alternate;animation:sway 3s infinite alternate;
 		.radial{
+			background-image:url(../images/meganTree1.svg);
 			-webkit-animation:grow .75s forwards, fadeIn .75s .5s forwards;animation:grow .75s forwards, fadeIn .75s .5s forwards;
 		}
 	}
 	.group2{
 		-webkit-animation:grow .75s forwards, fadeIn .75s .5s forwards;animation:grow .75s forwards, fadeIn .75s .5s forwards;
 		.radial{ 
+			background-image:url(../images/meganTree2.svg);
 			//proportion desired for art - depends on art dimensions
 			$radial-artW: .4*($globe-radius); 
 			$radial-artH: .8*($globe-radius);
@@ -160,6 +259,7 @@ $group3Rad: 24;
 	.group3{
 		-webkit-animation:sway 8s infinite alternate;animation:sway 8s infinite alternate;
 		.radial{ 
+			background-image:url(../images/meganTree3.svg);
 			//proportion desired for art - depends on art dimensions
 			$radial-artW: .3*($globe-radius); 
 			$radial-artH: .5*($globe-radius);

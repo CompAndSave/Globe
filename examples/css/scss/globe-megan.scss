@@ -93,6 +93,14 @@ $group3Rad: 24;
 @keyframes sway {
 	100%{-webkit-transform:rotate(5deg);transform:rotate(5deg);}
 }
+@-webkit-keyframes swayGlobe {
+	0%{-webkit-transform:rotate(15deg);transform:rotate(15deg);}
+	100%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}
+}
+@keyframes swayGlobe {
+	0%{-webkit-transform:rotate(15deg);transform:rotate(15deg);}
+	100%{-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}
+}
 @-webkit-keyframes moveclouds {
 	0% {margin-left: 1000px;}
 	100% {margin-left: -1000px;}
@@ -177,8 +185,9 @@ $group3Rad: 24;
 .megan-example{
 	position:relative;
 	overflow:hidden;
-	width:100%;
-	height:500px;
+	width:5*$globe-radius;
+	height:5*$globe-radius;
+	margin:0 auto;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#75C3FF+0,ffffff+98 */
 	background: #75C3FF; /* Old browsers */
 	background: -moz-radial-gradient(center, ellipse cover,  #75C3FF 0%, #ffffff 50%); /* FF3.6+ */
@@ -194,7 +203,7 @@ $group3Rad: 24;
 	background:url(../images/meganGlobe.png);
 	box-shadow:-2px -2px 0 #E2F2FF;
 	background-size:2*($globe-radius) 2*($globe-radius);
-	-webkit-animation:fadeIn .5s, sway 2s infinite alternate;animation:fadeIn .5s, sway 2s infinite alternate;
+	-webkit-animation:fadeIn .5s, swayGlobe 10s infinite alternate;animation:fadeIn .5s, swayGlobe 10s infinite alternate;
 	z-index:2;
 	.radial{
 		opacity:0;
